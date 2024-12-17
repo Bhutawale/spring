@@ -1,0 +1,15 @@
+package com.Spring_ComponentAnnotation;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		ApplicationContext context=new ClassPathXmlApplicationContext("com/Spring_ComponentAnnotation/config.xml");
+		Student stu=context.getBean("student", Student.class);
+		System.out.println(stu);
+		System.out.println(stu.getScontact());
+	}
+}

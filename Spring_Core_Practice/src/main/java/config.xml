@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ <bean class="com.Spring_Core_practice.Address" name="address">
+ 	<property name="city">
+ 		<value>Karjat</value>
+ 	</property>
+ 	<property name="country">
+ 		<value>India</value>
+ 	</property>
+ </bean>
+ 
+ <bean class="com.Spring_Core_practice.Address" name="address_1">
+ 	<property name="city" value="Panvel"></property>
+ 	<property name="country" value="India"></property>
+ </bean>
+ 
+ <bean class="com.Spring_Core_practice.Employee" name="employee">
+ 	<property name="eid">
+ 		<value>001</value>
+ 	</property>
+ 	<property name="ename">
+ 		<value>Satish</value>
+ 	</property>
+ 	<property name="eaddress">
+ 		<ref bean="address"/>
+ 	</property>
+ </bean>
+ 
+ <bean class="com.Spring_Core_practice.Employee" name="employee_1">
+ 	<property name="eid" value="002"></property>
+ 	<property name="ename" value="Prakash"></property>
+ 	<property name="eaddress" ref="address_1"></property>
+ </bean>
+ 
+
+ <bean class="com.Spring_Core_practice.Address" name="address_2" p:city="Nanded" p:country="India"></bean>
+ <bean class="com.Spring_Core_practice.Employee" name="employee_2" p:eid="003" p:ename="Sagar" p:eaddress-ref="address_2"></bean>
+ 
+ 
+ <bean class="com.Spring_Collection_Practice.Person" name="person_1">
+ 	
+ 	<property name="pid" value="111"></property>
+ 	
+ 	<property name="pname" value="Rahul"></property>
+ 	
+ 	<property name="pcontact">
+ 		<list>
+ 			<value>9011150573</value>
+ 			<value>7499151108</value>
+ 		</list>
+ 	</property>
+ 	
+ 	<property name="pcity">
+ 		<set>
+ 			<value>Karjat</value>
+ 			<value>Panvel</value>
+ 			<value>Pune</value>
+ 		</set>
+ 	</property>
+ 	
+ 	<property name="paddress">
+ 		<map>
+ 			<entry key="Karjat" value="India"></entry>
+ 			<entry key="Panvel" value="India"></entry>
+ 			<entry key="Pune" value="India"></entry>
+ 		</map>
+ 	</property>
+ </bean>
+ 
+ 
+ <bean class="com.Spring_Constructor_Practice.Course" name="course">
+ 	<constructor-arg value="555" type="int"></constructor-arg>
+ 	<constructor-arg value="Java"></constructor-arg>
+ </bean>
+ 
+ <bean class="com.Spring_Constructor_Practice.Student" name="stu">
+ 	<constructor-arg value="101" type="int"></constructor-arg>
+ 	<constructor-arg value="Satish Bhutawale"></constructor-arg>
+ 	<constructor-arg ref="course"></constructor-arg>
+ </bean>
+ 
+ </beans>

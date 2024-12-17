@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd">
+ 
+ <util:list list-class="java.util.LinkedList" id="contacts">
+ 	<value>9011150573</value>
+ 	<value>7499151108</value>
+ 	<value>1234567890</value>
+ </util:list>
+ 
+ <util:set set-class="java.util.HashSet" id="courses">
+ 	<value>Java</value>
+ 	<value>Hibernate</value>
+ 	<value>Spring</value>
+ 	<value>SpringBoot</value>
+ </util:set>
+ 
+ <util:map map-class="java.util.HashMap" id="add">
+ 	<entry key="Panvel" value="India"/>
+ 	<entry key="Karjat" value="India"/>
+ 	<entry key="Pune" value="India"/>
+ </util:map>
+ 
+ <bean class="com.Spring_StandaloneCollection.Person" name="person">
+ 	<property name="name" value="Satish Bhutawale" />
+ 	<property name="contact" ref="contacts"/>
+ 	<property name="course" ref="courses"/>
+ 	<property name="address" ref="add"></property>
+ </bean>
+ 
+ 
+ </beans>
